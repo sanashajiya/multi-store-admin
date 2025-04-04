@@ -12,12 +12,11 @@ class BannerWidget extends StatefulWidget {
 class _BannerWidgetState extends State<BannerWidget> {
   // A Future that will hold the list of banners once loaded from the API
   late Future<List<BannerModel>> futureBanners;
-  @override
   void initState() {
     super.initState();
     futureBanners = BannerController().loadBanners();
   }
-
+  @override
   Widget build(BuildContext context) {
     return FutureBuilder(
       future: futureBanners,
